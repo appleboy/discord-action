@@ -1,4 +1,4 @@
-FROM appleboy/drone-discord:1.2.1-linux-amd64
+FROM appleboy/drone-discord:linux-amd64
 
 # Github labels
 LABEL "com.github.actions.name"="Discord Notify"
