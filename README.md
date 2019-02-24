@@ -6,7 +6,7 @@
 
 ## Usage 
 
-Send custom message as blow
+Send custom message as below
 
 ```
 action "Send Custom Message" {
