@@ -19,6 +19,7 @@ action "Send Color Message" {
   uses = "appleboy/discord-action@master"
   env = {
     COLOR = "#48f442"
+    USERNAME = "GitHub Action"
   }
   secrets = [
     "WEBHOOK_ID",
