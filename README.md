@@ -4,6 +4,11 @@
 
 <img src="./images/message.png">
 
+## Features
+
+* [x] Send Multiple Messages
+* [x] Send Multiple Files 
+
 ## Usage 
 
 Send custom message as below
@@ -26,6 +31,7 @@ action "Send Custom Message" {
 * USERNAME - Optional. override the default username of the webhook
 * AVATAR_URL - Optional. override the default avatar of the webhook
 * COLOR - Optional. color code of the embed
+* FILE - Optional. send file message
 
 ## Example
 
@@ -68,6 +74,22 @@ action "Send Color Message" {
     "WEBHOOK_TOKEN",
   ]
   args = "A new commit has been pushed with custom color."
+}
+```
+
+Send multiple files
+
+```
+action "Send Multiple Files" {
+  uses = "appleboy/discord-action@master"
+  env = {
+    FILE = "./images/message.png,./images/workflow.png"
+  }
+  secrets = [
+    "WEBHOOK_ID",
+    "WEBHOOK_TOKEN",
+  ]
+  args = "Send Multiple File."
 }
 ```
 

@@ -4,6 +4,7 @@ workflow "Send Notification" {
     "Send Custom Message",
     "Send Default Message",
     "Send Color Message",
+    "Send Multiple Files",
   ]
 }
 
@@ -35,4 +36,16 @@ action "Send Color Message" {
     "WEBHOOK_TOKEN",
   ]
   args = "A new commit has been pushed with custom color."
+}
+
+action "Send Multiple Files" {
+  uses = "appleboy/discord-action@master"
+  env = {
+    FILE = "./images/message.png,./images/workflow.png"
+  }
+  secrets = [
+    "WEBHOOK_ID",
+    "WEBHOOK_TOKEN",
+  ]
+  args = "Send Multiple File."
 }
