@@ -1,0 +1,31 @@
+name: 'Discord Message Notify'
+description: 'Sending a Discord message'
+author: 'Bo-Yi Wu'
+inputs:
+  webhook_id:
+    description: 'discord webhook id'
+    required: true
+  webhook_token:
+    description: 'discord webhook token'
+    required: true
+  message:
+    description: 'the message contents (up to 2000 characters)'
+  file:
+    description: 'the contents of the file being sent'
+  color:
+    description: 'color code of the embed'
+  wait:
+    description: 'waits for server confirmation of message send before response, and returns the created message body'
+  tts:
+    description: 'true if this is a TTS message'
+  username:
+    description: 'override the default username of the webhook'
+  avatar_url:
+    description: 'override the default avatar of the webhook'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'message-square'
+  color: 'gray-dark'
