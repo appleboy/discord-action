@@ -88,9 +88,3 @@ Send multiple files
     file: "./images/message.png"
     message: "Send Multiple File."
 ```
-
-## Secrets
-
-Getting started with [Discord Webhook API](https://discordapp.com/developers/docs/resources/webhook).
-
-
