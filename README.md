@@ -32,12 +32,14 @@ jobs:
 
 ```
 
-## Environment variables
+## Input variables
 
-* USERNAME - Optional. override the default username of the webhook
-* AVATAR_URL - Optional. override the default avatar of the webhook
-* COLOR - Optional. color code of the embed
-* FILE - Optional. send file message
+* webhook_id - required. webhook id of channel.
+* webhook_token - required. webhook token of channel.
+* username - optional. override the default username of the webhook
+* avatar_url - optional. override the default avatar of the webhook
+* color - optional. color code of the embed
+* file - optional. send file message
 
 ## Example
 
@@ -91,5 +93,4 @@ Send multiple files
 
 Getting started with [Discord Webhook API](https://discordapp.com/developers/docs/resources/webhook).
 
-* `WEBHOOK_ID`: webhook id of channel.
-* `WEBHOOK_TOKEN`: webhook token of channel.
+
