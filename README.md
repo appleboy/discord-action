@@ -2,29 +2,35 @@
 
 [GitHub Action](https://developer.github.com/actions/) for sending a [Discord](https://discordapp.com/) notification message.
 
-<img src="./images/message.png">
+![message](./images/message.png)
 
 ## Features
 
 * [x] Send Multiple Messages
-* [x] Send Multiple Files 
+* [x] Send Multiple Files
 
-## Usage 
+## Usage
 
 Send custom message as below
 
-```
-action "Send Custom Message" {
-  uses = "appleboy/discord-action@master"
-  secrets = [
-    "WEBHOOK_ID",
-    "WEBHOOK_TOKEN",
-  ]
-  args = "A new commit has been pushed."
-}
-```
+```yaml
+name: discord message
+on: [push]
+jobs:
 
-<img src="images/workflow.png">
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: send custom message with args
+      uses: appleboy/discord-action@master
+      with:
+        webhook_id: ${{ secrets.WEBHOOK_ID }}
+        webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+        args: The ${{ github.event_name }} event triggered first step.
+
+```
 
 ## Environment variables
 
@@ -35,62 +41,50 @@ action "Send Custom Message" {
 
 ## Example
 
-Send custom message in `args`
+Send custom message in `message`
 
-```
-action "Send Custom Message" {
-  uses = "appleboy/discord-action@master"
-  secrets = [
-    "WEBHOOK_ID",
-    "WEBHOOK_TOKEN",
-  ]
-  args = "A new commit has been pushed."
-}
+```yaml
+- name: send message
+  uses: appleboy/discord-action@master
+  with:
+    webhook_id: ${{ secrets.WEBHOOK_ID }}
+    webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+    message: The ${{ github.event_name }} event triggered first step.
 ```
 
 Send the default message.
 
-```
-action "Send Default Message" {
-  uses = "appleboy/discord-action@master"
-  secrets = [
-    "WEBHOOK_ID",
-    "WEBHOOK_TOKEN",
-  ]
-}
+```yaml
+- name: send message
+  uses: appleboy/discord-action@master
+  with:
+    webhook_id: ${{ secrets.WEBHOOK_ID }}
+    webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
 ```
 
 Send the message with custom color and username
 
-```
-action "Send Color Message" {
-  uses = "appleboy/discord-action@master"
-  env = {
-    COLOR = "#48f442"
-    USERNAME = "GitHub Action"
-  }
-  secrets = [
-    "WEBHOOK_ID",
-    "WEBHOOK_TOKEN",
-  ]
-  args = "A new commit has been pushed with custom color."
-}
+```yaml
+- name: send message
+  uses: appleboy/discord-action@master
+  with:
+    webhook_id: ${{ secrets.WEBHOOK_ID }}
+    webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+    color: "#48f442"
+    username: "GitHub Bot"
+    message: "A new commit has been pushed with custom color."
 ```
 
 Send multiple files
 
-```
-action "Send Multiple Files" {
-  uses = "appleboy/discord-action@master"
-  env = {
-    FILE = "./images/message.png,./images/workflow.png"
-  }
-  secrets = [
-    "WEBHOOK_ID",
-    "WEBHOOK_TOKEN",
-  ]
-  args = "Send Multiple File."
-}
+```yaml
+- name: send message
+  uses: appleboy/discord-action@master
+  with:
+    webhook_id: ${{ secrets.WEBHOOK_ID }}
+    webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+    file: "./images/message.png"
+    message: "Send Multiple File."
 ```
 
 ## Secrets
