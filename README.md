@@ -2,6 +2,8 @@
 
 [GitHub Action](https://developer.github.com/actions/) for sending a [Discord](https://discordapp.com/) notification message.
 
+[![Actions Status](https://github.com/appleboy/telegram-action/workflows/telegram%20message/badge.svg)](https://github.com/appleboy/facebook-action/actions)
+
 ![message](./images/message.png)
 
 ## Features
