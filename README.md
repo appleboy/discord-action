@@ -6,6 +6,8 @@
 
 ![message](./images/message.png)
 
+**Important**: Only support **Linux** [docker](https://www.docker.com/) container.
+
 ## Features
 
 * [x] Send Multiple Messages
