@@ -11,9 +11,8 @@ jobs:
       - name: send custom message with args
         uses: ./
         with:
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          args: The ${{ github.event_name }} event triggered first step.
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          message: "A new commit has been pushed with custom message."
 
       - name: send default message
         uses: ./
