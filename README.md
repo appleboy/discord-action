@@ -42,6 +42,7 @@ jobs:
 - avatar_url: (Optional) Override the default avatar of the webhook.
 - color: (Optional) Color code of the embed.
 - file: (Optional) Send a file message.
+- debug: (Optional) Enable debug mode.
 
 ## Example
 

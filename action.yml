@@ -22,6 +22,8 @@ inputs:
     description: "Override the default username of the webhook. This allows you to set a custom username for the message sender."
   avatar_url:
     description: "Override the default avatar of the webhook. This allows you to set a custom avatar for the message sender."
+  debug:
+    description: "Enable debug mode. If set to true, the action will output the request and response details."
 runs:
   using: "docker"
   image: "Dockerfile"
