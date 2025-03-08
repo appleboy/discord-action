@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: send custom message with args
+      - name: send custom message
         uses: appleboy/discord-action@v1.2.0
         with:
           webhook_url: ${{ secrets.WEBHOOK_URL }}
