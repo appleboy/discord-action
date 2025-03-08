@@ -1,23 +1,23 @@
-# 🚀 Discord for GitHub Actions
+# 🚀 GitHub Actions 的 Discord
 
-English | [繁體中文](./README.zh-tw.md) | [简体中文](./README.zh-cn.md)
+[English](./README.md) | [繁體中文](./README.zh-tw.md) | 简体中文
 
-[GitHub Action](https://developer.github.com/actions/) for sending a [Discord](https://discordapp.com/) notification message.
+[GitHub Action](https://developer.github.com/actions/) 用于发送 [Discord](https://discordapp.com/) 通知消息。
 
 [![Actions Status](https://github.com/appleboy/discord-action/workflows/discord%20message/badge.svg)](https://github.com/appleboy/discord-action/actions)
 
 ![message](./images/message.png)
 
-**Important**: Only supports **Linux** [Docker](https://www.docker.com/) containers.
+**重要**: 仅支持 **Linux** [Docker](https://www.docker.com/) 容器。
 
-## Features
+## 功能
 
-- [x] Send Multiple Messages
-- [x] Send Multiple Files
+- [x] 发送多条消息
+- [x] 发送多个文件
 
-## Usage
+## 用法
 
-Send a custom message as shown below:
+如下所示发送自定义消息：
 
 ```yaml
 name: discord message
@@ -35,20 +35,20 @@ jobs:
           message: The ${{ github.event_name }} event triggered first step.
 ```
 
-## Input variables
+## 输入变量
 
-- webhook_url: Webhook URL of the channel.
-- webhook_id: Webhook ID of the channel.
-- webhook_token: Webhook token of the channel.
-- username: (Optional) Override the default username of the webhook.
-- avatar_url: (Optional) Override the default avatar of the webhook.
-- color: (Optional) Color code of the embed.
-- file: (Optional) Send a file message.
-- debug: (Optional) Enable debug mode.
+- webhook_url: 频道的 Webhook URL。
+- webhook_id: 频道的 Webhook ID。
+- webhook_token: 频道的 Webhook 令牌。
+- username: (可选) 覆盖 Webhook 的默认用户名。
+- avatar_url: (可选) 覆盖 Webhook 的默认头像。
+- color: (可选) 嵌入的颜色代码。
+- file: (可选) 发送文件消息。
+- debug: (可选) 启用调试模式。
 
-## Example
+## 示例
 
-Send a custom message using `webhook_url`:
+使用 `webhook_url` 发送自定义消息：
 
 ```yaml
 - name: send message
@@ -58,7 +58,7 @@ Send a custom message using `webhook_url`:
     message: The ${{ github.event_name }} event triggered first step.
 ```
 
-Send the default message:
+发送默认消息：
 
 ```yaml
 - name: send message
@@ -67,7 +67,7 @@ Send the default message:
     webhook_url: ${{ secrets.WEBHOOK_URL }}
 ```
 
-Send the message with a custom color and username:
+发送带有自定义颜色和用户名的消息：
 
 ```yaml
 - name: send message
@@ -80,7 +80,7 @@ Send the message with a custom color and username:
     message: "A new commit has been pushed with custom color."
 ```
 
-Send multiple files:
+发送多个文件：
 
 ```yaml
 - name: send message
