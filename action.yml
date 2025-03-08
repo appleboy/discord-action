@@ -2,12 +2,12 @@ name: "Discord Message Notify"
 description: "Send a message to a Discord channel using a webhook"
 author: "Bo-Yi Wu"
 inputs:
+  webhook_url:
+    description: "The URL of the Discord webhook"
   webhook_id:
     description: "The ID of the Discord webhook"
-    required: true
   webhook_token:
     description: "The token of the Discord webhook"
-    required: true
   message:
     description: "The content of the message to send (up to 2000 characters)"
   file:

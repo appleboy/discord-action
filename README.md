@@ -6,69 +6,66 @@
 
 ![message](./images/message.png)
 
-**Important**: Only support **Linux** [docker](https://www.docker.com/) container.
+**Important**: Only supports **Linux** [Docker](https://www.docker.com/) containers.
 
 ## Features
 
-* [x] Send Multiple Messages
-* [x] Send Multiple Files
+- [x] Send Multiple Messages
+- [x] Send Multiple Files
 
 ## Usage
 
-Send custom message as below
+Send a custom message as shown below:
 
 ```yaml
 name: discord message
 on: [push]
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: send custom message with args
-      uses: appleboy/discord-action@master
-      with:
-        webhook_id: ${{ secrets.WEBHOOK_ID }}
-        webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-        args: The ${{ github.event_name }} event triggered first step.
-
+      - uses: actions/checkout@master
+      - name: send custom message with args
+        uses: appleboy/discord-action@master
+        with:
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          args: The ${{ github.event_name }} event triggered first step.
 ```
 
 ## Input variables
 
-* webhook_id - required. webhook id of channel.
-* webhook_token - required. webhook token of channel.
-* username - optional. override the default username of the webhook
-* avatar_url - optional. override the default avatar of the webhook
-* color - optional. color code of the embed
-* file - optional. send file message
+- webhook_url: Webhook URL of the channel.
+- webhook_id: Webhook ID of the channel.
+- webhook_token: Webhook token of the channel.
+- username: (Optional) Override the default username of the webhook.
+- avatar_url: (Optional) Override the default avatar of the webhook.
+- color: (Optional) Color code of the embed.
+- file: (Optional) Send a file message.
 
 ## Example
 
-Send custom message in `message`
+Send a custom message using `webhook_url`:
 
 ```yaml
 - name: send message
   uses: appleboy/discord-action@master
   with:
-    webhook_id: ${{ secrets.WEBHOOK_ID }}
-    webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+    webhook_url: ${{ secrets.WEBHOOK_URL }}
     message: The ${{ github.event_name }} event triggered first step.
 ```
 
-Send the default message.
+Send the default message:
 
 ```yaml
 - name: send message
   uses: appleboy/discord-action@master
   with:
-    webhook_id: ${{ secrets.WEBHOOK_ID }}
-    webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+    webhook_url: ${{ secrets.WEBHOOK_URL }}
 ```
 
-Send the message with custom color and username
+Send the message with a custom color and username:
 
 ```yaml
 - name: send message
@@ -81,7 +78,7 @@ Send the message with custom color and username
     message: "A new commit has been pushed with custom color."
 ```
 
-Send multiple files
+Send multiple files:
 
 ```yaml
 - name: send message
