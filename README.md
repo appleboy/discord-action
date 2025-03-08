@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: send custom message with args
-        uses: appleboy/discord-action@master
+        uses: appleboy/discord-action@v1.2.0
         with:
           webhook_url: ${{ secrets.WEBHOOK_URL }}
           message: The ${{ github.event_name }} event triggered first step.
@@ -52,7 +52,7 @@ Send a custom message using `webhook_url`:
 
 ```yaml
 - name: send message
-  uses: appleboy/discord-action@master
+  uses: appleboy/discord-action@v1.2.0
   with:
     webhook_url: ${{ secrets.WEBHOOK_URL }}
     message: The ${{ github.event_name }} event triggered first step.
@@ -62,7 +62,7 @@ Send the default message:
 
 ```yaml
 - name: send message
-  uses: appleboy/discord-action@master
+  uses: appleboy/discord-action@v1.2.0
   with:
     webhook_url: ${{ secrets.WEBHOOK_URL }}
 ```
@@ -71,7 +71,7 @@ Send the message with a custom color and username:
 
 ```yaml
 - name: send message
-  uses: appleboy/discord-action@master
+  uses: appleboy/discord-action@v1.2.0
   with:
     webhook_id: ${{ secrets.WEBHOOK_ID }}
     webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
@@ -84,7 +84,7 @@ Send multiple files:
 
 ```yaml
 - name: send message
-  uses: appleboy/discord-action@master
+  uses: appleboy/discord-action@v1.2.0
   with:
     webhook_id: ${{ secrets.WEBHOOK_ID }}
     webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
