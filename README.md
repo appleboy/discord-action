@@ -29,9 +29,8 @@ jobs:
       - name: send custom message with args
         uses: appleboy/discord-action@master
         with:
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          args: The ${{ github.event_name }} event triggered first step.
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          message: The ${{ github.event_name }} event triggered first step.
 ```
 
 ## Input variables

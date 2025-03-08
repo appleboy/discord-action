@@ -1,27 +1,27 @@
 name: "Discord Message Notify"
-description: "Send a message to a Discord channel using a webhook"
+description: "Send a message to a Discord channel using a webhook. This action allows you to notify a Discord channel by sending a message through a webhook."
 author: "Bo-Yi Wu"
 inputs:
   webhook_url:
-    description: "The URL of the Discord webhook"
+    description: "The URL of the Discord webhook. This is the endpoint where the message will be sent."
   webhook_id:
-    description: "The ID of the Discord webhook"
+    description: "The ID of the Discord webhook. This is a unique identifier for the webhook."
   webhook_token:
-    description: "The token of the Discord webhook"
+    description: "The token of the Discord webhook. This token is used to authenticate the webhook."
   message:
-    description: "The content of the message to send (up to 2000 characters)"
+    description: "The content of the message to send. The message can be up to 2000 characters long."
   file:
-    description: "The content of the file to send"
+    description: "The content of the file to send. You can attach a file to the message."
   color:
-    description: "The color code for the embed message"
+    description: "The color code for the embed message. This sets the color of the embed's side border."
   wait:
-    description: "Wait for server confirmation before responding, and return the created message body"
+    description: "Wait for server confirmation before responding. If set to true, the action will return the created message body."
   tts:
-    description: "Set to true if the message should be read aloud using text-to-speech"
+    description: "Set to true if the message should be read aloud using text-to-speech. This enables the text-to-speech feature for the message."
   username:
-    description: "Override the default username of the webhook"
+    description: "Override the default username of the webhook. This allows you to set a custom username for the message sender."
   avatar_url:
-    description: "Override the default avatar of the webhook"
+    description: "Override the default avatar of the webhook. This allows you to set a custom avatar for the message sender."
 runs:
   using: "docker"
   image: "Dockerfile"
